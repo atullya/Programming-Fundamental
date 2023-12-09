@@ -1,0 +1,36 @@
+/******************************************************************************
+
+                              Online C++ Compiler.
+               Code, Compile, Run and Debug C++ program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+   // get=> method of cin use to input single character
+    // char a=cin.get();
+    // cout<<a<<endl;
+    
+    
+    // //put=> method of cout use to display a specific character
+    // cout.put(a);
+    
+    
+    //getline => method of cin used to input string of multiple spaces;
+    
+    char arr[34];
+    cout<<"Enter your name:";
+    cin.getline(arr,34);
+    cout<<arr;
+    
+    
+    // write=> method of cout used to read n character
+    cout.write(arr,34);
+
+    return 0;
+}

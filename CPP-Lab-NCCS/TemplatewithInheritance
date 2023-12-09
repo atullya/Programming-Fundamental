@@ -1,0 +1,37 @@
+#include <iostream>
+
+using namespace std;
+
+template <class T>
+class one {
+public:
+    T x, y;
+    void display() {
+        cout << x;
+    }
+};
+
+template <class s>
+class two : public one<s> {
+public:
+    int z;
+    two(s a, s b, s c) {
+        this->x = a;
+        this->y = b;
+        this->z = c;
+    };
+    void show() {
+        cout << this->x << this->y << this->z;
+    }
+};
+
+int main() {
+    two<int> i(1, 2, 3);
+    i.show();
+    cout << endl;
+    two<float> i1(1.1, 2.2, 3.3);
+    i1.show();
+    cout << endl;
+
+    return 0;
+}

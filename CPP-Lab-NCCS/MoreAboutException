@@ -1,0 +1,38 @@
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+
+    int x;
+    int y;
+    try{
+    cout<<"Enter x:";
+    cin>>x;
+    if(x==0){
+        throw"Hello";
+    }else if(x==1){
+        throw(10);
+    }else if(x==2){
+        throw('x');
+    }else{
+        cout<<"bye";
+    }
+    }
+    
+    catch(const char *msg){
+        cout<<msg;
+    }
+    catch(int n){
+        cout<<n<<" is integer exception";
+    }
+    catch(char a){
+        cout<<a<<" is character exception";
+    }
+        
+    
+
+    return 0;
+}

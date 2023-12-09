@@ -1,0 +1,37 @@
+/******************************************************************************
+
+             Basic to UserDefine
+             
+*******************************************************************************/
+
+#include <iostream>
+
+using namespace std;
+class A{
+    int x;
+    public:
+    A (int a){
+        x=a;
+        
+    }
+    void display(){
+        cout<<x<<endl;
+    }
+ 
+    
+};
+
+int main()
+{
+   
+   int n;
+   n=5;
+  A a1(n);
+//   A a1=n;
+a1.display();
+    
+    
+    
+
+    return 0;
+}

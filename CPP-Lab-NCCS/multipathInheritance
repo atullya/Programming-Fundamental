@@ -1,0 +1,95 @@
+#include <iostream>
+#include <string> // added to use string datatype
+using namespace std;
+
+class Student {
+    public:
+    int roll;
+    string name;
+public:
+    void readData() {
+        cout << "Enter Your name: ";
+        cin >> name;
+        cout << "Enter Your roll: ";
+        cin >> roll;
+    }
+    
+    void display() {
+        cout << "Your name is " << name << " and your roll no is " << roll << endl;
+    }
+};
+
+class Exam : public Student {
+    protected:
+    double science;
+    double math;
+    double computer;
+public:
+    void setMarks() {
+        Student::readData();
+        cout << "Enter marks in science: ";
+        cin >> science;
+        cout << "Enter marks in math: ";
+        cin >> math;
+        cout << "Enter marks in computer: ";
+        cin >> computer;
+    }
+    
+    double getMarks() {
+        return science + math + computer;
+    }
+    
+    void displayMarks() {
+        Student::display();
+        cout << "Your marks in science is " << science << endl;
+        cout << "Your marks in math is " << math << endl;
+        cout << "Your marks in computer is " << computer << endl;
+    }
+};
+
+class Sport : public Student {
+    double sport_score;
+public:
+    void setScore() {
+        cout << "Enter your score in sports: ";
+        cin >> sport_score;
+    }
+    
+    double getSportScore() {
+        return sport_score;
+    }
+    
+    void displayScore() {
+        cout << "Your score in sports is " << sport_score << endl;
+    }
+};
+
+class Result : public Exam, public Sport {
+    double total;
+    double average;
+public:
+    void compute() {
+        total = science+math+computer + Sport::getSportScore();
+        average = total / 3; 
+    }
+    
+    void displayResult() {
+        cout << "Your total marks is " << total << " and your average marks is " << average << endl;
+    }   
+};
+
+int main() {
+    Result r1;
+    Student s1;
+    // s1.readData();
+    r1.setMarks();
+    r1.setScore();
+    
+    // s1.display();
+    r1.displayMarks();
+    r1.displayScore();
+    r1.compute();
+    r1.displayResult();
+
+    return 0;
+}

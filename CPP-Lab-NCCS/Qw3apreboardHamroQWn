@@ -1,0 +1,62 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+class User {
+private:
+    string username;
+    string password;
+    double balance;
+
+public:
+    User(string username, string password, double balance = 0) {
+        this->username = username;
+        this->password = password;
+        this->balance = balance;
+    }
+
+    void introduce() {
+        cout << "Username: " << username << endl;
+        cout << "Balance: $" << balance << endl;
+    }
+
+    // Getters
+    string getUsername() {
+        return username;
+    }
+
+    string getPassword() {
+        return password;
+    }
+
+    double getBalance() {
+        return balance;
+    }
+
+    // Setters
+    void setUsername(string username) {
+        this->username = username;
+    }
+
+    void setPassword(string password) {
+        this->password = password;
+    }
+
+    void deposit(double amount) {
+        balance += amount;
+    }
+};
+
+int main() {
+    // Create a new user with a balance of $100
+    User user("john123", "password123", 100.0);
+
+    // Deposit $50 into the user's account
+    user.deposit(50.0);
+
+    // Display the user's information
+    user.introduce();
+
+    return 0;
+}

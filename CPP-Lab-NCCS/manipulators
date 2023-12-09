@@ -1,0 +1,31 @@
+/******************************************************************************
+
+                              Online C++ Compiler.
+               Code, Compile, Run and Debug C++ program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
+#include <iostream>
+#include<iomanip>
+
+using namespace std;
+
+int main()
+{
+    int num=123;
+    cout<<setw(10)<<num<<endl;
+    
+    double n=123.456789;
+    cout<<setprecision(4)<<n<<endl;
+    
+    cout<<setw(5)<<setfill('a')<<num<<endl;
+    
+    
+        // cout.setf(ios::showpos | ios::uppercase);
+    cout << "Number with showpos and uppercase flags: " << setiosflags(ios::showpos | ios::uppercase)<<num << endl;
+    cout << "Number without flags: " << resetiosflags(ios::showpos | ios::uppercase) << num << endl;
+    
+
+    return 0;
+}

@@ -1,0 +1,46 @@
+#include <iostream>
+
+using namespace std;
+
+class Inch {
+    int in;
+public:
+
+    Inch(int a) {
+        in = a;
+    }
+    int getLength() const {
+        return in;
+    }
+};
+
+class Feet {
+    int length;
+public:
+    
+    Feet(int f) {
+        length = f;
+    }
+    void display() const {
+        cout << "The distance in feet is " << length << endl;
+    }
+    Feet(const Inch& i) {
+        length = i.getLength() / 12;
+    }
+    int getLength() const {
+        return length;
+    }
+};
+
+int main() {
+    Inch i(12);
+    Feet f = i; // Conversion constructor called
+    f.display();
+    cout << "The distance is " << f.getLength() << " feet" << endl;
+
+    Feet f2; // Default constructor called
+    f2.display();
+    cout << "The distance is " << f2.getLength() << " feet" << endl;
+
+    return 0;
+}

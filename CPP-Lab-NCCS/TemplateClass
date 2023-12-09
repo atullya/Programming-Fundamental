@@ -1,0 +1,37 @@
+/******************************************************************************
+
+                              Online C++ Compiler.
+               Code, Compile, Run and Debug C++ program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
+#include <iostream>
+
+using namespace std;
+template <class T>
+class point{
+    T a, b;
+    public:
+    point(T x, T y){
+        a=x;
+        y=b;
+    }
+    T check(){
+    T d;
+    d=a+b;
+    return d;
+    }
+    
+};
+int main()
+{
+   point<int> p1(1,2);
+   point<float> p2(2.2,3.3);
+  cout<< p1.check()<<endl;
+  cout<< p2.check()<<endl;
+   
+  
+
+    return 0;
+}

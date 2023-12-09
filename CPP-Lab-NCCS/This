@@ -1,0 +1,31 @@
+#include <iostream>
+using namespace std;
+class MyClass {
+  int x;
+ public:
+ 
+//   MyClass setX(int x) {
+//     this->x = x;
+//     return *this;
+// // class ko name diyo bhanne return garnu parxa
+//   }
+  
+//   void setX(int x) {
+//     this->x = x;
+//     // void matra x bhanne pardaina
+//   }
+ 
+  void printX() {
+    cout << "x = " << this->x << endl;
+   
+   //both will work
+   // cout << "x = " << x << endl;
+  }
+};
+
+int main() {
+  MyClass obj;
+  obj.setX(10);
+  obj.printX();
+  return 0;
+}

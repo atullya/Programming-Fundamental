@@ -1,0 +1,52 @@
+#include <iostream>
+using namespace std;
+
+class student {
+    string name;
+    string cla;
+public:
+    student() {};
+    student(string name, string cla) {
+        this->name = name;
+        this->cla = cla;
+    }
+    void print(){
+        cout<<"Your name is "<<this->name<<" and your class is "<<this->cla<<endl;
+    }
+};
+
+class science : public student {
+    int marks_science;
+public:
+    void setMarks() {
+        cout << "Enter your marks in science: ";
+        cin >> marks_science;
+    }
+    int getMarks() {
+        return marks_science;
+    }
+};
+
+class math : public student {
+    int marks_math;
+public:
+    void setMarks() {
+        cout << "Enter your marks in Math: ";
+        cin >> marks_math;
+    }
+    int getMarks() {
+        return marks_math;
+    }
+};
+
+int main() {
+    student s1("Atullya", "CSIT");
+    science s;
+    s.setMarks();
+    math m;
+    m.setMarks();
+    float avg_marks = (s.getMarks() + m.getMarks()) / 2.0;
+    s1.print();
+    cout << "Average marks: " << avg_marks << endl;
+    return 0;
+}
